@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="glass">
+      <h1 id="countdown">Countdown</h1>
+    </div>
+  </div>
+  <script>
+
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      if (event.data.type === 'countdown') {
+        // Update the countdown element with the message
+        console.log(event.data.countdown)
+        document.getElementById("countdown").innerHTML = event.data.countdown;
+      }
+    });
+    // Register the service worker and listen for messages
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service worker registered:', registration);
+          }).catch((error) => {
+            console.log('Service worker registration failed:', error);
+          });
+      });
+    }
+
+  </script>
+</body>
+
+</html>
