@@ -10,7 +10,7 @@ self.addEventListener("activate", (event) => {
   console.log("Service worker activated");
 
   // Set the countdown date
-  var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
+  var countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function () {
