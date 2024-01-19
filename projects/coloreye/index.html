@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(window).bind("load", function () {
+
+            play();
+
+        });
+    </script>
+    <div id="play" >
+        <button type="button" id="btn1" onclick="Click1()"></button>
+        <button type="button" id="btn2" onclick="Click2()"></button>
+        <button type="button" id="btn3" onclick="Click3()"></button>
+        <button type="button" id="btn4" onclick="Click4()"></button>
+    </div>
+    <button type="button" id="btnplay" onclick="play()">PLAY</button>
+   <div id="point">       
+       <label id="diem">0000</label>
+   </div>
+   
+</body>
+</html>

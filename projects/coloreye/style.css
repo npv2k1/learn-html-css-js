@@ -1,0 +1,78 @@
+﻿body {
+    
+}
+
+#btnplay{
+    width:100px;
+    height:25px;
+}
+#play{
+    width:500px;
+    height:500px;
+    padding:5px,5px,5px,5px;
+}
+#btn1 {    
+    padding:0px,0px,0px,0px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width:49%;
+    height:49%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;   
+    cursor: pointer;  
+    
+}
+#btn2 {
+    padding: 0px,0px,0px,0px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width: 49%;
+    height: 49%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+#btn3 {
+    padding: 0px,0px,0px,0px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width: 49%;
+    height: 49%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+#btn4 {
+    padding: 0px,0px,0px,0px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width: 49%;
+    height: 49%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+#point{
+    height:500px;
+    width:100px;
+    margin-left:510px;
+    margin-top:0px;
+    position:absolute;
+    top:0px;
+   margin-top:8px;
+}
+#diem {
+   
+    width: 100%;
+    margin-top: 0px;
+   text-align:center;
+   font-size:50px;
+}
