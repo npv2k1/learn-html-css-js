@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>Nhập thông tin xe cộ</h2>
+            </div>
+            <div class="card-body">
+              <form id="form-nhap-thong-tin">
+                <div class="form-group">
+                  <label for="ten-xe" class="required">Tên Xe:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="ten-xe"
+                    name="ten-xe"
+                    placeholder="Nhập tên xe"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="hinh-anh">Hình Ảnh:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="hinh-anh"
+                    name="hinh-anh"
+                    placeholder="Nhập link ảnh"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="hang-xe" class="required">Hãng Xe:</label>
+                  <select
+                    class="form-control"
+                    id="hang-xe"
+                    name="hang-xe"
+                    required
+                  >
+                    <option value="">--Chọn hãng xe--</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Mazda">Mazda</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="gia-tien" class="required">Giá Tiền:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="gia-tien"
+                    name="gia-tien"
+                    placeholder="Nhập giá tiền"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="mo-ta">Mô Tả:</label>
+                  <textarea
+                    class="form-control"
+                    id="mo-ta"
+                    name="mo-ta"
+                    rows="3"
+                    placeholder="Nhập mô tả"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="nguoi-lien-he" class="required"
+                    >Người liên hệ:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nguoi-lien-he"
+                    name="nguoi-lien-he"
+                    placeholder="Nhập tên người liên hệ"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="so-dien-thoai" class="required"
+                    >Số điện thoại người liên hệ:</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="so-dien-thoai"
+                    name="so-dien-thoai"
+                    placeholder="Nhập số điện thoại"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email" class="required">Email:</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Nhập email"
+                    required
+                  />
+                </div>
+                <div class="form-btn">
+                  <button type="submit" class="btn btn-success">Lưu</button>
+                  <button id="btn-xoa" class="btn btn-warning" type="button">
+                    Xoá
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-9 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>Quản lý danh sách xe cộ</h2>
+            </div>
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tim-kiem"
+                  placeholder="Tìm kiếm"
+                />
+              </div>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Hình Ảnh</th>
+                    <th>Tên Xe</th>
+                    <th>Hãng Xe</th>
+                    <th>Giá Tiền</th>
+                    <th>Người liên hệ</th>
+                    <th>Điện thoại</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-danh-sach"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./index.js"></script>
+</html>

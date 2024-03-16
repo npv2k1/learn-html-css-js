@@ -1,0 +1,14 @@
+.required::after {
+  content: " *";
+  color: red;
+}
+
+.form-btn {
+  margin-top: 20px;
+  align-items: flex-start;
+  display: flex;
+}
+
+.form-btn > * {
+  margin-right: 8px;
+}
